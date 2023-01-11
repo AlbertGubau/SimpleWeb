@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles-dist.css">
+    <title>First web page</title>
+
+</head>
+<body>
+    
+    <div class = "wrapper">
+        <nav class="navbar">
+            <img class ="logo" src="STApp_logo.png" alt="STApp_logo">
+            <ul>
+                <li><a class = "active" href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class = "center">
+            <h1>Welcome to STApp</h1>
+            <h2>Create Something New</h2>
+            
+            <div class="buttons">
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+                </script>
+
+                <input type="file" id="upload" hidden/>
+                <label for="upload">  
+                    Load  audio
+                </label>
+                
+                <audio id="audio" class ="audio" controls>
+                    <source src="" id="src" />
+                </audio>
+                
+                <script>
+                    
+                    function handleFiles(event) {
+                        var files = event.target.files;
+                        $("#src").attr("src", URL.createObjectURL(files[0]));
+                        document.getElementById("audio").load();
+                    }
+
+                    document.getElementById("upload").addEventListener("change", handleFiles, false);
+                
+                </script>
+                
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
